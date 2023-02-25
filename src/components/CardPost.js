@@ -17,16 +17,23 @@ export default function CardPost({ country, city, title, created }) {
 
     return (
         <div className={styles.wrapper}>
-            <Card sx={{ minWidth: 248, minHeight: 244 }}>
+            <Card
+                sx={{ minWidth: 248, minHeight: 244 }}
+                style={{ borderRadius: 'unset' }}
+            >
                 <CardContent>
-                    <Typography className=''>{`${country}, ${city}`}</Typography>
-                    <Typography className=''>{title}</Typography>
+                    <Typography
+                        className={styles.countryCity}
+                    >{`${country}, ${city}`}</Typography>
+                    <Typography className={styles.title}>{title}</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size='small'>Посмотреть</Button>
+                    <Button size='small' className={styles.viewButton}>
+                        Посмотреть
+                    </Button>
                 </CardActions>
             </Card>
-            <div>{`добавлено ${formattedDate}`}</div>
+            <div class={styles.addDate}>{`добавлено ${formattedDate}`}</div>
         </div>
     )
 }
