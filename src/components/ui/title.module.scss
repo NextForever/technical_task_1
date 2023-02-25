@@ -1,0 +1,17 @@
+.title {
+    display: flex;
+    margin-top: 34px;
+    margin-left: 36px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #ffffff;
+    span {
+        display: flex;
+        margin-left: 10px;
+        font-size: 28px;
+        line-height: 34px;
+        align-items: center;
+        color: #2b8580;
+    }
+}
