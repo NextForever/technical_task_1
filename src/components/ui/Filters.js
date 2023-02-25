@@ -20,13 +20,25 @@ const listButtons = [
     'ПРОЧЕЕ',
 ]
 
+const filterQuery = e => {
+    console.log(e.target.innerHTML)
+}
+
 const Filters = () => {
     return (
-        <div className={styles.wrapper}>
-            {listButtons.map((text, i) => (
-                <ButtonSearch key={i} text={text} />
-            ))}
-        </div>
+        <>
+            <div className={styles.wrapper}>
+                {listButtons.map((text, i) => (
+                    <ButtonSearch
+                        key={i}
+                        text={text}
+                        className={styles.buttons}
+                        onClick={filterQuery}
+                    />
+                ))}
+            </div>
+            <div></div>
+        </>
     )
 }
 

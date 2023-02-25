@@ -3,8 +3,31 @@
     justify-content: space-between;
     align-content: flex-start;
     width: 1200px;
-    height: 800px;
     margin-left: 34px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
+}
+.wrapButton {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btnBackground {
+        padding: 3px;
+        background: url('../images/show_view.png') center (center / cover)
+            no-repeat;
+    }
+    .buttons {
+        width: 219px;
+        height: 50px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #ffffff;
+        background-color: #3b3b3b;
+        border: #3b3b3b;
+        margin: 8px 8px;
+        cursor: pointer;
+    }
 }

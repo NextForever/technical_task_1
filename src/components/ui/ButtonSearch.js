@@ -1,7 +1,9 @@
-import styles from './buttonSearch.module.scss'
-
-const ButtonSearch = ({ text }) => {
-    return <button className={styles.buttons}>{text}</button>
+const ButtonSearch = ({ text, className, onClick }) => {
+    return (
+        <button className={className} onClick={onClick}>
+            {text}
+        </button>
+    )
 }
 
 export default ButtonSearch

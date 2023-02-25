@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import styles from './cardPost.module.scss'
 
-export default function CardPost({ country, city, title, created }) {
+export default function CardPost({ id, country, city, title, created }) {
     const date = new Date(created)
     const options = {
         day: '2-digit',
@@ -14,6 +14,11 @@ export default function CardPost({ country, city, title, created }) {
     }
 
     const formattedDate = new Intl.DateTimeFormat('ru-RU', options).format(date)
+
+    const HandleOpenModal = e => {
+        let target = e.target.value
+        console.log(target)
+    }
 
     return (
         <div className={styles.wrapper}>
@@ -28,12 +33,17 @@ export default function CardPost({ country, city, title, created }) {
                     <Typography className={styles.title}>{title}</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size='small' className={styles.viewButton}>
+                    <Button
+                        size='small'
+                        className={styles.viewButton}
+                        value={id}
+                        onClick={HandleOpenModal}
+                    >
                         Посмотреть
                     </Button>
                 </CardActions>
             </Card>
-            <div class={styles.addDate}>{`добавлено ${formattedDate}`}</div>
+            <div className={styles.addDate}>{`добавлено ${formattedDate}`}</div>
         </div>
     )
 }
