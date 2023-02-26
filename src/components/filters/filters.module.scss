@@ -15,7 +15,7 @@
 .clearButton {
     position: absolute;
     top: 7px;
-    right: 20px;
+    right: 10px;
     width: 54px;
     height: 52px;
 
@@ -26,8 +26,10 @@
 }
 .clearButtonText {
     display: block;
-    font-size: 10px;
+    font-size: 8px;
+    width: 65px;
     margin-top: 60px;
+    margin-left: -4px;
 }
 .buttons {
     border: 1px solid #ffffff;
