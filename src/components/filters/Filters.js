@@ -7,15 +7,27 @@ import styles from './filters.module.scss'
 const Filters = ({ filters, setFilters }) => {
     const [listButton, setListButton] = useState([])
     const [filrerArr, setFilrerArr] = useState([])
+    const [btnActive, setBtnActive] = useState(false)
 
-    const filterQuery = e => {
+    const toggleFilterQuery = e => {
+        const btnFilter = e.target
         const fiterText = e.target.innerHTML
-        const newFilters = [...filrerArr, fiterText]
-        setFilrerArr(newFilters)
+        const isFilterAdded = filrerArr.includes(fiterText)
 
-        filterFetchData(newFilters).then(res => setFilters(res))
+        if (isFilterAdded) {
+            const newFilters = filrerArr.filter(item => item !== fiterText)
+            setFilrerArr(newFilters)
+            btnFilter.classList.remove('activeFilter')
+            console.log(newFilters)
+            filterFetchData(newFilters).then(res => setFilters(res))
+        } else {
+            const newFilters = [...filrerArr, fiterText]
+            setFilrerArr(newFilters)
+            btnFilter.classList.add('activeFilter')
+            console.log(newFilters)
+            filterFetchData(newFilters).then(res => setFilters(res))
+        }
     }
-    console.log(filrerArr)
 
     useEffect(() => {
         fetchAllData().then(res => setListButton(res))
@@ -42,7 +54,7 @@ const Filters = ({ filters, setFilters }) => {
                         key={i}
                         text={text.application}
                         className={styles.buttons}
-                        onClick={filterQuery}
+                        onClick={toggleFilterQuery}
                     />
                 ))}
             </div>
