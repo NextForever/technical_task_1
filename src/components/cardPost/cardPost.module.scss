@@ -2,8 +2,8 @@
     display: block;
     position: relative;
     width: 248px;
-    height: 244px;
-    margin: 40px 0 20px 0;
+    height: 204px;
+    margin: 40px 50px 59px 0px;
     .addDate {
         margin-top: 3px;
         font-style: italic;
@@ -13,18 +13,7 @@
         text-align: right;
         color: #ababab;
     }
-    .viewButton {
-        position: absolute;
-        bottom: 32px;
-        left: 16px;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 17px;
-        display: flex;
-        align-items: center;
-        color: #2b8580;
-    }
+
     .countryCity {
         position: absolute;
         top: 32px;
@@ -47,5 +36,17 @@
         font-size: 18px;
         line-height: 22px;
         color: #303030;
+    }
+    .viewButton {
+        position: absolute;
+        bottom: -10px;
+        left: 10px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        color: #2b8580;
     }
 }

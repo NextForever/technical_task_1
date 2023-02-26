@@ -1,0 +1,116 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.modalContainer {
+    background-color: #fefefe;
+    margin: 100px auto;
+    width: 851px;
+    height: 780px;
+    border: 1px solid #888;
+}
+.blockHeaderModal {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 267px;
+}
+.applicationModal {
+    display: inline-block;
+    padding: 9px;
+    margin: 40px 0 24px 40px;
+    color: #fefefe;
+    height: 40px;
+    background: #2b8580;
+    border: 1px solid #2b8580;
+}
+.closeModal {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 30px;
+}
+.regionModal {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    margin-left: 40px;
+
+    color: #888888;
+}
+.titleModal {
+    margin-left: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    width: 720px;
+    height: 102px;
+    color: #000000;
+}
+
+.blockCenterModal {
+    display: flex;
+    justify-content: space-around;
+    color: #fefefe;
+
+    width: 100%;
+    height: 197px;
+    background-color: #2b8580;
+}
+.titleObjectModal,
+.titleDirectionModal,
+.titleDeveloperModal {
+    width: 231px;
+    height: 133px;
+    padding: 32px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+.objectModal,
+.directionModal,
+.developerModal {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: none;
+    color: #ffffff;
+}
+
+.blockFooterModal {
+    display: block;
+    width: 100%;
+    height: 316px;
+}
+.titleDescriptionModal {
+    margin-top: 24px;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+}
+.descriptionModal {
+    padding: 8px 40px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+}

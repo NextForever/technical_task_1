@@ -5,7 +5,18 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import styles from './cardPost.module.scss'
 
-export default function CardPost({ id, country, city, title, created }) {
+export default function CardPost({
+    id,
+    country,
+    city,
+    title,
+    created,
+    description,
+    application,
+    object,
+    direction,
+    developer,
+}) {
     const date = new Date(created)
     const options = {
         day: '2-digit',
@@ -18,6 +29,27 @@ export default function CardPost({ id, country, city, title, created }) {
     const HandleOpenModal = e => {
         let target = e.target.value
         console.log(target)
+
+        const blockModal = document.querySelector('#modalText')
+
+        const applicationModal = document.querySelector('#applicationModal')
+        const regionModal = document.querySelector('#regionModal')
+        const titleModal = document.querySelector('#titleModal')
+        const objectModal = document.querySelector('#objectModal')
+        const directionModal = document.querySelector('#directionModal')
+        const developerModal = document.querySelector('#developerModal')
+        const descriptionModal = document.querySelector('#descriptionModal')
+
+        //---------
+        applicationModal.innerHTML = application
+        regionModal.innerHTML = country + ' ' + city
+        titleModal.innerHTML = title
+        objectModal.innerHTML = object
+        directionModal.innerHTML = direction
+        developerModal.innerHTML = developer
+        descriptionModal.innerHTML = description
+
+        blockModal.classList.add('visibleModal')
     }
 
     return (

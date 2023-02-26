@@ -1,14 +1,14 @@
+import { useState } from 'react'
+
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 
 import styles from '@/styles/Home.module.scss'
-import Title from '@/components/ui/Title'
-import Filters from '@/components/ui/Filters'
-import Posts from '@/components/Posts'
-
-const inter = Inter({ subsets: ['latin'] })
+import Title from '@/components/ui/title/Title'
+import Filters from '@/components/filters/Filters'
+import Posts from '@/components/posts/Posts'
 
 export default function Home() {
+    const [filters, setFilters] = useState([])
     return (
         <>
             <Head>
@@ -25,9 +25,9 @@ export default function Home() {
             </Head>
             <div className='container'>
                 <div className={styles.wrapper}>
-                    <Title text='323' />
-                    <Filters />
-                    <Posts />
+                    <Title filters={filters} />
+                    <Filters filters={filters} setFilters={setFilters} />
+                    <Posts filters={filters} setFilters={setFilters} />
                 </div>
             </div>
         </>

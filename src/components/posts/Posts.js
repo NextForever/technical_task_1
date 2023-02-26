@@ -1,34 +1,34 @@
 import { useEffect, useState } from 'react'
-import CardPost from './CardPost'
+import CardPost from '../cardPost/CardPost'
 import styles from './posts.module.scss'
-import { fetchData } from '@/servises/fetchStatic'
+import { fetchData, fetchAllData } from '@/servises/fetchStatic'
+import Modals from '../ui/modals/Modals'
 
-const Posts = () => {
-    const [posts, setPosts] = useState([])
+const Posts = ({ filters, setFilters }) => {
     const [btnClick, setBtnClick] = useState('Показать все')
 
     useEffect(() => {
-        fetchData(4).then(res => setPosts(res))
+        fetchData(8).then(res => setFilters(res))
     }, [])
 
-    const showAllPosts = () => {
-        fetchData(100).then(res => setPosts(res))
+    const fetchShowAll = () => {
+        fetchAllData().then(res => setFilters(res))
         setTimeout(() => {
             setBtnClick('Скрыть')
         }, 1000)
     }
 
     const hideAllPosts = () => {
-        fetchData(8).then(res => setPosts(res))
-
+        fetchData(8).then(res => setFilters(res))
         setBtnClick('Показать все')
     }
 
     return (
         <>
+            <Modals />
             <div className={styles.wrapper}>
-                {posts &&
-                    posts.map(post => <CardPost key={post.id} {...post} />)}
+                {filters &&
+                    filters.map(post => <CardPost key={post.id} {...post} />)}
             </div>
             <div className={styles.wrapButton}>
                 <div className={styles.btnBackground}>
@@ -36,7 +36,7 @@ const Posts = () => {
                         className={styles.buttons}
                         onClick={() =>
                             btnClick === 'Показать все'
-                                ? showAllPosts()
+                                ? fetchShowAll()
                                 : hideAllPosts()
                         }
                     >
